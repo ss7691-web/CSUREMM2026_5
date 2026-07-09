@@ -6,7 +6,7 @@ import pandas as pd
 
 SERIES_LIST = ["KXBRENTD"]
 
-#SERIES_LIST = pd.read_csv("hourly_market_data/data/all_tech.csv")["series_ticker"].tolist()
+#SERIES_LIST = pd.read_csv("hourly_kalshi/data/all_tech.csv")["series_ticker"].tolist()
 
 for series in SERIES_LIST:
     print(f"\n===== {series} =====")

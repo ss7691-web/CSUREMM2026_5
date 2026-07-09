@@ -17,14 +17,14 @@ candlesticks = candlesticks.merge(times, on="ticker", how="left")
 candlesticks["resolution_time"] = (
     pd.to_datetime(candlesticks["close_time"], utc=True)
       .dt.tz_convert("America/New_York")
-      .dt.strftime("%Y-%m-%d %H:%M:%S")
+      .dt.strftime("%Y-%m-%d")
 )
 
 bloom = pd.read_csv("hourly_kalshi/data/forecast_BRENT.csv")
-bloom["Date"] = pd.to_datetime(bloom["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
+bloom["Date"] = pd.to_datetime(bloom["Date"]).dt.strftime("%Y-%m-%d")
 
 btc_data_final = bloom.merge(
-    candlesticks, how="outer", left_on="Date", right_on="resolution_time"
+    candlesticks, how="inner", left_on="Date", right_on="resolution_time"
 )
 os.makedirs("hourly_kalshi/data/blended", exist_ok=True)
 btc_data_final.to_csv("hourly_kalshi/data/blended/blended_KXBRENTD.csv", index=False)

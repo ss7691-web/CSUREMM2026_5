@@ -2,8 +2,8 @@ import glob
 import pandas as pd
 import os
 
-SERIES = "KXBTC15M"
-DATA_DIR = f"hourly_market_data/data_bitcoin/{SERIES}"
+SERIES = "KXBRENTD"
+DATA_DIR = f"hourly_kalshi/data/{SERIES}"
 
 candle_files = glob.glob(f"{DATA_DIR}/**/*_candlesticks.csv", recursive=True)
 candlesticks = pd.concat([pd.read_csv(f) for f in candle_files], ignore_index=True)
@@ -20,12 +20,12 @@ candlesticks["resolution_time"] = (
       .dt.strftime("%Y-%m-%d %H:%M:%S")
 )
 
-bloom = pd.read_csv("hourly_market_data/data_bitcoin/forecast_BRTI15m.csv")
+bloom = pd.read_csv("hourly_kalshi/data/forecast_BRENT.csv")
 bloom["Date"] = pd.to_datetime(bloom["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 
 btc_data_final = bloom.merge(
     candlesticks, how="outer", left_on="Date", right_on="resolution_time"
 )
-os.makedirs("hourly_market_data/data/blended", exist_ok=True)
-btc_data_final.to_csv("hourly_market_data/data/blended/blended_BTC15MIN.csv", index=False)
+os.makedirs("hourly_kalshi/data/blended", exist_ok=True)
+btc_data_final.to_csv("hourly_kalshi/data/blended/blended_KXBRENTD.csv", index=False)
 print("written", len(btc_data_final), "rows")

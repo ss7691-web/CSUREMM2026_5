@@ -2,8 +2,8 @@ import requests
 import pandas as pd
 import os
 
-CATEGORY = "Politics"          # <- verify this returns results
-OUT_DIR  = "hourly_market_data/data"
+CATEGORY = "Politics"          
+OUT_DIR  = "hourly_kalshi/data"
 OUT_CSV  = f"{OUT_DIR}/all_tech.csv"
 
 all_series = []

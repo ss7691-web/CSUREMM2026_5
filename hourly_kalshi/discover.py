@@ -31,7 +31,7 @@ def _write_csv(path, markets):
             writer.writerow({"ticker": m["ticker"], "open_time": m["open_time"], "close_time": m["close_time"]})
 
 def discover(series):
-    folder = f"hourly_market_data/data/{series}"
+    folder = f"hourly_kalshi/data/{series}"
     os.makedirs(folder, exist_ok=True)
 
     live = _discover_all(f"{BASE}/markets", series)

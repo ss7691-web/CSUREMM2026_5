@@ -9,7 +9,7 @@ def _to_est(ts, tz=eastern):
     return datetime.fromtimestamp(ts, tz=tz)
 
 def convert_series(series):
-    paths = glob.glob(f"hourly_market_data/data/{series}/*/*_candlesticks.csv")
+    paths = glob.glob(f"hourly_kalshi/data/{series}/*/*_candlesticks.csv")
     print(f"[{series}] converting time for {len(paths)} files")
     for path in paths:
         df = pd.read_csv(path)

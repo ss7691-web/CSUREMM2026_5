@@ -38,7 +38,7 @@ def fetch_candlesticks(series, time_kind):
 
     for _, row in markets.iterrows():
         ticker = row["ticker"]
-        market_dir = f"hourly_market_data/data/{series}/{ticker}"
+        market_dir = f"hourly_kalshi/data/{series}/{ticker}"
         os.makedirs(market_dir, exist_ok=True)
         output_path = f"{market_dir}/{ticker}_candlesticks.csv"
 

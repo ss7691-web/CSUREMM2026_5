@@ -1,0 +1,5 @@
+cryptography
+duckdb
+flask
+requests
+websockets

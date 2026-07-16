@@ -13,7 +13,7 @@
 The problem is explored through two pathways, single series allocation and multi-series allocation. Single series allocation positions with financial data time series forecast and optimizes sizes to maximize the expected Sharpe ratio of the combined directional-plus-contract return. This strategy focuses on allocating in  Kalshi series that predict the price levels of commodities and cryptocurrencies. The former is combined with an entropy penalty discouraging concentration. The multi-series allocation uses dynamic Granger causality to find indirect causality from the financial index towards the Science and Technology sector of Kalshi. To estimate the hourly fair value for each market in the portfolio, we apply the volume weighted quasibinomial GLM, to fit every Kalshi Market to financial index pairs. We then use this to create a dynamic portfolio and invest when the edge exceeds an entry threshold. 
 
 ## Project Structure
-
+```
 ├── api_collector/       # Live Kalshi data collection pipeline
 │
 ├── hourly_kalshi/       # Historical hourly candlestick pipeline
@@ -27,3 +27,4 @@ The problem is explored through two pathways, single series allocation and multi
 ├── unique_days.py       # Utility: counts unique market open days in collected data
 ├── requirements.txt     # Python dependencies
 └── readme.md            # This file
+```

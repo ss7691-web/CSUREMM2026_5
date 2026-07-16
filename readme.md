@@ -15,7 +15,6 @@ The problem is explored through two pathways, single series allocation and multi
 ## Project Structure
 
 ```
-.
 ├── .github/        # GitHub actions, workflows, and issue templates
 ├── assets/         # Images, logos, and media files used in README
 ├── docs/           # Supplemental project documentation

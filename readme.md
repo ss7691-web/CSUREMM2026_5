@@ -12,19 +12,20 @@
 
 The problem is explored through two pathways, single series allocation and multi-series allocation. Single series allocation positions with financial data time series forecast and optimizes sizes to maximize the expected Sharpe ratio of the combined directional-plus-contract return. This strategy focuses on allocating in  Kalshi series that predict the price levels of commodities and cryptocurrencies. The former is combined with an entropy penalty discouraging concentration. The multi-series allocation uses dynamic Granger causality to find indirect causality from the financial index towards the Science and Technology sector of Kalshi. To estimate the hourly fair value for each market in the portfolio, we apply the volume weighted quasibinomial GLM, to fit every Kalshi Market to financial index pairs. We then use this to create a dynamic portfolio and invest when the edge exceeds an entry threshold. 
 
-### Project Structure 
-\```
+## Project Structure
+
+```
 .
-├── .github/               # GitHub actions, workflows, and issue templates
-├── assets/                # Images, logos, and media files used in README
-├── docs/                  # Supplemental project documentation
-├── src/                   # Source code files
-│   ├── components/        # Reusable UI components
-│   ├── config/            # Configuration files and environment setups
-│   └── main.js            # Main application entry point
-├── tests/                 # Unit, integration, and end-to-end tests
-├── .gitignore             # Specifies intentionally untracked files to ignore
-├── LICENSE                # Full text of the project license
-├── package.json           # Project dependencies and lifecycle scripts
-└── README.md              # This file
-\```
+├── .github/        # GitHub actions, workflows, and issue templates
+├── assets/         # Images, logos, and media files used in README
+├── docs/           # Supplemental project documentation
+├── src/            # Source code files
+│   ├── components/ # Reusable UI components
+│   ├── config/     # Configuration files and environment setups
+│   └── main.js     # Main application entry point
+├── tests/          # Unit, integration, and end-to-end tests
+├── .gitignore      # Specifies intentionally untracked files to ignore
+├── LICENSE         # Full text of the project license
+├── package.json    # Project dependencies and lifecycle scripts
+└── README.md       # This file
+```
